@@ -16,42 +16,11 @@
 <div class="sharethis-inline-share-buttons"></div>
 
 <center><table id='table' border cellpadding=3>
-       <tr><th width=120>Fullname</th><th width=80>Username</th><th width=40>Email</th></th><th width=80>Score</th>
+       <tr><th>Fullname</th><th>Username</th><th>Email</th></th><th>Score</th>
        </tr></table></center>
 
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
-<script type="text/javascript" >
-
-
-  
-
-	$.getJSON("leaderboard.json", function(data){
-		var rep = data;
-		console.log(rep);
-         
-         var name = data[0]['FULL NAME'];
-          var user = data[0]['USERNAME'];
-           var score = data[0]['TOTAL POINTS__1'];
-
-           console.log(name + " " + user +" "+ score);
-
-           $(jQuery.parseJSON(JSON.stringify(rep))).each(function() {  
-         var names = this['FULL NAME'];
-         var usernames = this['USERNAME'];
-         var mail = this['EMAIL'];
-         var scores = this['TOTAL POINTS'];
-
-  $("#table").append("<tr>"+"<td>" + names + "</td>"+
-      "<td>"+ usernames + "</td>"+
-      "<td>" + mail +"</td>"+
-      "<td>" + scores + "</td>"+"</tr>"+"<br>"
-     );
-
-         console.log(names, usernames, mail,scores);
-});
-});
-        
-</script>
+<script type="text/javascript" src="leaderboard.js"></script>
 
 
 </body>

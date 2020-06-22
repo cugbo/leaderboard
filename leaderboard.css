@@ -1,5 +1,5 @@
 body{
-  width: 80%;
+  width: 60%;
    font-size: 22px;
     font-family: 'Zilla Slab', serif;
     background: url(2617.jpg);
@@ -17,7 +17,8 @@ th{
 	background-color:#4CAF50;
 }
 th, td {
-  padding: 13px;
+  width: 1px;
+  padding: 5px;
   text-align: left;
   border-bottom: 3px solid #ddd;
 }
