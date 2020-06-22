@@ -2,64 +2,28 @@
 <!doctype html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef0f923b61c220011098161&product=inline-share-buttons" async="async"></script>
+
   <title> LeaderBoard</title>
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+    <link href="leaderboard.css" rel="stylesheet">
   
 </head>
 
-<style type="text/css">
-
-body{
-   font-size: 22px;
-    font-family: 'Zilla Slab', serif;
-    background: url(images/101994-OM0XMB-226.jpg);
-      background-color: coral;
-    background-size: cover;
-    margin: 0;
-}
-
-	 #table{
-    	background-color: white;
-        width: 70%;
-         border-collapse: collapse;
-}
-th{
-	background-color:#4CAF50;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 3px solid #ddd;
-}
-  
-tr:hover {
-	background-color: #f5f5f5;
-
-}
-</style>
-
 <body>
+<span><p> Welcome to the HNGi7 Leaderboard</span><br>
+<div class="sharethis-inline-share-buttons"></div>
 
-	<br><br>
-	<div id="show">Hi</div>
-
-<center><table id='table' border cellpadding=2><h4>
-       <tr><th width=100>Fullname</th><th width=80>Username</th><th width=80>Email</th></th><th width=80>Score</th>
-
-      
-<tr>
-
-      
-   
-</tr></table></center><br>
-
-
+<center><table id='table' border cellpadding=3>
+       <tr><th width=120>Fullname</th><th width=80>Username</th><th width=40>Email</th></th><th width=80>Score</th>
+       </tr></table></center>
 
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" >
 
 
+  
 
 	$.getJSON("leaderboard.json", function(data){
 		var rep = data;
@@ -74,31 +38,21 @@ tr:hover {
            $(jQuery.parseJSON(JSON.stringify(rep))).each(function() {  
          var names = this['FULL NAME'];
          var usernames = this['USERNAME'];
-         var mail = this['EMAIL__1'];
-         var scores = this['TOTAL POINTS__1'];
+         var mail = this['EMAIL'];
+         var scores = this['TOTAL POINTS'];
 
-  $("#table").append("<td>" + names + "</td>"+
+  $("#table").append("<tr>"+"<td>" + names + "</td>"+
       "<td>"+ usernames + "</td>"+
-      "<td>" + names + "</td>"+
       "<td>" + mail +"</td>"+
-      "<td>" + scores + "</td>"+"<br>"
+      "<td>" + scores + "</td>"+"</tr>"+"<br>"
      );
 
          console.log(names, usernames, mail,scores);
-
+});
 });
         
-
-
-
-});
-
-
-	var datas = $.csv.toObjects("HNGi7 Central Leaderboard (Sorted) - Sheet1.csv");
-	console.log(datas);
-
-
 </script>
+
 
 </body>
 </html>
